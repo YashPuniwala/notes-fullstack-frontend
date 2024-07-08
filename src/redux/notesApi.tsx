@@ -7,10 +7,13 @@ import {
 } from "../types/api-types";
 import { Note, User } from "../types/types";
 
+const baseUrl = 'https://notes-fullstack-backend.onrender.com/api/';
+
 export const notesApi = createApi({
   reducerPath: "notesApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: `/api/`,
+    baseUrl: baseUrl,
+    credentials: "include"
   }),
   //   tagTypes: ["users"],
   endpoints: (builder) => ({
